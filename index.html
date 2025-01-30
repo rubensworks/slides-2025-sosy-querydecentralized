@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head prefix="foaf: http://xmlns.com/foaf/0.1/">
-    <title>Requirements for Query Execution across Decentralized Environments</title>
+    <title>Querying across Solid Pods</title>
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -22,7 +22,7 @@
   <body class="shower list" prefix="rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns# foaf: http://xmlns.com/foaf/0.1/ owl: http://www.w3.org/2002/07/owl# xsd: http://www.w3.org/2001/XMLSchema# org: http://www.w3.org/ns/org# schema: http://schema.org/ cite: http://purl.org/spar/cito/" typeof="schema:PresentationDigitalDocument">
     <header class="caption">
       <div class="title">
-        <h1 property="schema:name">Requirements for Query Execution across Decentralized Environments</h1>
+        <h1 property="schema:name">Querying across Solid Pods</h1>
       </div>
       <div class="captiondata">
         <p class="author" rel="schema:author"><a href="https://www.rubensworks.net/#me">Ruben Taelman</a></p>
@@ -33,48 +33,112 @@
     </header>
 
     <section id="title" class="slide title" inlist="" rel="schema:hasPart" resource="#title">
-      <h2 property="schema:name">Requirements for Query Execution across Decentralized Environments</h2>
+      <h2 property="schema:name">Querying across Solid Pods</h2>
       <ul class="author inline">
           <li class="current"><a href="https://www.rubensworks.net/">Ruben Taelman</a></li>
       </ul>
       <p class="affiliation"><a href="http://idlab.technology/">Ghent University – imec – IDLab, Belgium</a></p>
     </section>
 
-    <section id="start" class="slide" style="background-image: url('img/TODO.jpg')" inlist="" rel="schema:hasPart" resource="#start">
-        <h2 property="schema:name" class="big" style="margin-top: 20px; color: white; text-shadow: 2px 2px black">INTRO</h2>
-        <ul style="color: white; text-shadow: 2px 2px black; font-size: 1.3em">
-            <li>TODO</li>
+    <section id="start" class="slide" inlist="" rel="schema:hasPart" resource="#start">
+        <h2 property="schema:name" class="big" style="margin-top: 20px; font-size: 1.9em">Interconnected Solid Pods form a <em>Decentralized Knowledge Graph</em> (DKG)</h2>
+        <ul>
+            <li><h3>Lack of centralized index(es)</h3></li>
+            <li><h3>Massive number of globally distributed sources</h3></li>
+            <li><h3>Permissioned data</h3></li>
+        </ul>
+        <div style="text-align: center">
+            <img src="img/solid-logo.svg" alt="Solid Logo" style="height: 200px; margin: 0px" \>
+        </div>
+    </section>
+    
+    <section id="complexity-devs" class="slide" inlist="" rel="schema:hasPart" resource="#complexity-devs">
+        <h2 property="schema:name" class="big" style="margin-top: 20px">Difficulties for app developers</h2>
+        <ul>
+            <li>
+              <h3>Discovering data</h3>
+  			  <span class="indent" style="font-style:italic">How can I find pods? How can I find data within a pod?</span>
+            </li>
+            <li>
+              <h3>Combining data</h3>
+  			  <span class="indent" style="font-style:italic">How to combine data across different pods?</span>
+            </li>
+            <li>
+              <h3>Preserving privacy</h3>
+  			  <span class="indent" style="font-style:italic">How to not leak sensitive data?</span>
+            </li>
         </ul>
     </section>
-	
-    <section id="index" class="slide index" inlist="" rel="schema:hasPart" resource="#index">
+    
+    <section id="connection-point" class="slide" inlist="" rel="schema:hasPart" resource="#connection-point">
+        <h2 property="schema:name" class="big" style="margin-top: 20px; font-size: 1.9em">Abstract access to DKGs with query engines</h2>
+        <h3>Hide the complexities of reading and writing for app developers</h3>
+        <center>
+            <img src="img/computer.png" alt="Application" width="150px" style="margin-right: 20px" />
+            <span style="font-size: 6em; vertical-align: baseline; position: relative; top: -40px">&harr;</span>
+            <img src="img/gear.png" alt="Gear" width="170px" />
+            <span style="font-size: 6em; vertical-align: baseline; position: relative; top: -40px">&harr;</span>
+            <img src="img/globe.png" alt="Globe" width="150px" style="margin-left: 20px" />
+        </center>
+        <p style="font-style: italic; float: left">SPARQL, GraphQL, &mldr;</p>
+        <p style="text-align: right; font-style: italic"><a href="https://www.flaticon.com/free-icons/application" title="application icons">Image credit</a></p>
+    </section>
+    
+    <section id="link-traversal" class="slide" inlist="" rel="schema:hasPart" resource="#link-traversal">
+      <h2 property="schema:name" style="font-size: 1.9em">As a foundation, engines should follow links</h2>
       <ul>
-        <li><a href="#index-a">TODO</a></li>
-		<li><a href="#index-b">TODO</a></li>
+          <li>
+          	  <h3>Solid pods adhere to Linked Data Principles</h3>
+			  <span class="indent">Lookup more information about <em>things</em> by following links</span><br \>
+			  <span class="indent">➕ Fully decentralized</span><br \>
+              <span class="indent">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No dependency on intermediaries</span><br \>
+              <span class="indent">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Robust against partial unavailability</span><br \>
+              <span class="indent">➖ Slow for complex queries</span>
+          </li>
+      </ul>
+      <center>
+          <img src="img/follow-links.svg" alt="Follow links" style="height: 240px" \>
+      </center>
+    </section>
+    
+    <section id="challenges" class="slide" inlist="" rel="schema:hasPart" resource="#challenges">
+      <h2 property="schema:name">If pods expose more information, querying can become faster</h2>
+     <ul>
+          <li>
+          	  <h3>When following links, engines can <em>discover</em> optimizations</h3>
+              <span class="indent">If pods expose them</span>
+          </li>
+          <li>
+          	  <h3>A pod can guide engines more efficiently towards relevant data</h3>
+              <span class="indent">Type indexes, shape trees, shape indexes, &mldr;</span>
+          </li>
+          <li>
+          	  <h3>Cross-pod indexes can prune out irrelevant pods</h3>
+              <span class="indent">Aggregations or summarization of data across collections of pods</span><br \>
+              <span class="indent">Dangers: staleness, trust, censorship, &mldr;</span>
+          </li>
       </ul>
     </section>
     
-    <section id="index-a" class="slide index" inlist="" rel="schema:hasPart" resource="#index-a">
-      <ul>
-        <li class="current"><a href="#index-a">TODO</a></li>
-		<li><a href="#index-b">TODO</a></li>
-      </ul>
-    </section>
-	
-    <section id="some-slide" class="slide" inlist="" rel="schema:hasPart" resource="#some-slide">
-      <h2 property="schema:name">TODO: A regular slide</h2>
-      <ul>
-          <li>
-          	  <h3>A</h3>
-			  <span class="indent">TODO: Description</span>
-          </li>
-          <li>B</li>
-          <li>C</li>
-      </ul>
-    </section>
-	
-    <section id="conclusion" class="slide" inlist="" rel="schema:hasPart" resource="#conclusion">
-      <h2 property="schema:name" class="big">TODO: Conclusion</h2>
+    <section id="conclusions" class="slide" inlist="" rel="schema:hasPart" resource="#conclusions">
+        <h2 property="schema:name">What we are working on</h2>
+        <center><img src="img/comunica_white_on_red.svg" width="20%" style="float: right" /></center>
+		<ul>
+			<li>
+				<h3>Comunica can query over Solid pods</h3>
+                <span class="indent">Based on following links.</span><br \>
+                <span class="indent">Sub-second performance for simple queries.</span><br \>
+				<span class="indent"><a href="https://comunica.dev/docs/query/advanced/solid/">https://comunica.dev/docs/query/advanced/solid/</a></span>
+			</li>
+			<li>
+				<h3>More research is needed</h3>
+                <span class="indent">Complex intra- and inter-pod queries.</span>
+			</li>
+			<li>
+				<h3>We investigate these challenges at Ghent University</h3>
+                <span class="indent"><a href="https://www.rubensworks.net/contact/">Contact me</a> to collaborate!</span>
+			</li>
+		</ul>
     </section>
 
     <footer>
