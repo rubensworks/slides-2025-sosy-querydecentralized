@@ -85,7 +85,7 @@
     </section>
     
     <section id="link-traversal" class="slide" inlist="" rel="schema:hasPart" resource="#link-traversal">
-      <h2 property="schema:name" style="font-size: 1.9em">As a foundation, engines should follow links</h2>
+      <h2 property="schema:name" style="font-size: 1.9em">Client-side engines must follow links</h2>
       <ul>
           <li>
           	  <h3>Solid pods adhere to Linked Data Principles</h3>
@@ -100,7 +100,7 @@
           <img src="img/follow-links.svg" alt="Follow links" style="height: 240px" \>
       </center>
     </section>
-    
+	
     <section id="challenges" class="slide" inlist="" rel="schema:hasPart" resource="#challenges">
       <h2 property="schema:name">If pods expose more information, querying can become faster</h2>
      <ul>
@@ -119,6 +119,41 @@
           </li>
       </ul>
     </section>
+	
+    <section id="link-traversal-results" class="slide" inlist="" rel="schema:hasPart" resource="#link-traversal-results">
+      <h2 property="schema:name" style="font-size: 1.9em">Query results arrive incrementally<br \>within human attention limits</h2>
+      <center>
+          <img src="img/querytimes_d2-3.svg" alt="Query arrival times for Query D2-3" style="height: 260px" \>
+      </center>
+      <ul>
+          <li>SPARQL query with 6 triple patterns</li>
+		  <li>Across 1.531 simulated Solid pods (158.233 files, 3.556.159 triples)</li>
+		  <li style="font-size: 0.75em"><em><a href="https://comunica.github.io/Article-ISWC2023-SolidQuery/">Taelman, Ruben, and Ruben Verborgh. "Link traversal query processing over decentralized environments with structural assumptions." International Semantic Web Conference 2023.</a></em></li>
+      </ul>
+    </section>
+	
+    <section id="slow-queries" class="slide" inlist="" rel="schema:hasPart" resource="#slow-queries">
+      <h2 property="schema:name" style="font-size: 1.9em">Query execution time mainly influenced by number of followed links</h2>
+      <center>
+		  <img src="img/queue-discover-4.svg" alt="Link queue Discover 4" style="height: 260px" \>
+          <img src="img/queue-complex-2.svg" alt="Link queue Complex 2" style="height: 260px" \>
+      </center>
+      <ul>
+          <li>Queries requiring few links are fast (Discover 4)</li>
+		  <li>Queries requiring many links are slower (Complex 2)</li>
+		  <li style="font-size: 0.75em"><em><a href="https://rubeneschauzier.github.io/QuWeDa2023-Link-Queue-Analysis-Camera-Ready/QuWeDa_2023_Link_Queue_Analysis_Final.pdf">Eschauzier, Ruben, Ruben Taelman, and Ruben Verborgh. "How Does the Link Queue Evolve during Traversal-Based Query Processing?." QuWeDa/MEPDaW@ISWC. 2023.</a></em></li>
+      </ul>
+    </section>
+	
+    <section id="shape-index" class="slide" inlist="" rel="schema:hasPart" resource="#shape-index">
+      <h2 property="schema:name" style="font-size: 1.9em">Pods exposing <em>shape information</em> allows query engines to skip many links</h2>
+      <center>
+		  <img src="img/shapeindex.png" alt="Shape index" style="height: 300px" \>
+      </center>
+      <ul>
+          <li style="font-size: 0.75em"><em><a href="https://arxiv.org/pdf/2407.00998v2">Tam, Bryan-Elliott, et al. "Opportunities for Shape-based Optimization of Link Traversal Queries." arXiv preprint arXiv:2407.00998 (2024).</a></em></li>
+      </ul>
+    </section>
     
     <section id="conclusions" class="slide" inlist="" rel="schema:hasPart" resource="#conclusions">
         <h2 property="schema:name">What we are working on</h2>
@@ -127,16 +162,18 @@
 			<li>
 				<h3>Comunica can query over Solid pods</h3>
                 <span class="indent">Based on following links.</span><br \>
-                <span class="indent">Sub-second performance for simple queries.</span><br \>
+                <span class="indent">Fast for simple queries.</span><br \>
 				<span class="indent"><a href="https://comunica.dev/docs/query/advanced/solid/">https://comunica.dev/docs/query/advanced/solid/</a></span>
 			</li>
 			<li>
 				<h3>More research is needed</h3>
-                <span class="indent">Complex intra- and inter-pod queries.</span>
+                <span class="indent">Complex intra- and inter-pod queries.</span><br \>
+				<span class="indent">Shape indexes, aggregations, &mldr;</span>
 			</li>
 			<li>
 				<h3>We investigate these challenges at Ghent University</h3>
-                <span class="indent"><a href="https://www.rubensworks.net/contact/">Contact me</a> to collaborate!</span>
+                <span class="indent"><a href="https://www.rubensworks.net/contact/">Contact me</a> to collaborate!</span><br \>
+				<span class="indent">&nbsp;&nbsp;<a href="https://www.rubensworks.net/contact/">https://www.rubensworks.net/contact/</a></span>
 			</li>
 		</ul>
     </section>
