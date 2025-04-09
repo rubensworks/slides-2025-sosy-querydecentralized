@@ -53,7 +53,7 @@
     </section>
     
     <section id="complexity-devs" class="slide" inlist="" rel="schema:hasPart" resource="#complexity-devs">
-        <h2 property="schema:name" class="big" style="margin-top: 20px">Difficulties for app developers</h2>
+        <h2 property="schema:name" class="big" style="margin-top: 20px; font-size: 2em">Difficulties for user-facing app developers</h2>
         <ul>
             <li>
               <h3>Discovering data</h3>
@@ -85,11 +85,12 @@
     </section>
     
     <section id="link-traversal" class="slide" inlist="" rel="schema:hasPart" resource="#link-traversal">
-      <h2 property="schema:name" style="font-size: 1.9em">Client-side engines must follow links</h2>
+      <h2 property="schema:name" style="font-size: 1.9em">Solid pods adhere to Linked Data Principles</h2>
       <ul>
           <li>
-          	  <h3>Solid pods adhere to Linked Data Principles</h3>
-			  <span class="indent">Lookup more information about <em>things</em> by following links</span><br \>
+          	  <h3>Client-side engines can discover data by following links</h3>
+			  <span class="indent"><strong>Link Traversal Query Processing:</strong><br \>
+			  <span class="indent">&nbsp;&nbsp;&nbsp;&nbsp;Lookup more information about <em>things</em> by following links</span><br \><br \>
 			  <span class="indent">➕ Fully decentralized</span><br \>
               <span class="indent">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No dependency on intermediaries</span><br \>
               <span class="indent">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Robust against partial unavailability</span><br \>
@@ -97,27 +98,8 @@
           </li>
       </ul>
       <center>
-          <img src="img/follow-links.svg" alt="Follow links" style="height: 240px" \>
+          <img src="img/follow-links.svg" alt="Follow links" style="height: 180px" \>
       </center>
-    </section>
-	
-    <section id="challenges" class="slide" inlist="" rel="schema:hasPart" resource="#challenges">
-      <h2 property="schema:name">If pods expose more information, querying can become faster</h2>
-     <ul>
-          <li>
-          	  <h3>When following links, engines can <em>discover</em> optimizations</h3>
-              <span class="indent">If pods expose them</span>
-          </li>
-          <li>
-          	  <h3>A pod can guide engines more efficiently towards relevant data</h3>
-              <span class="indent">Type indexes, shape trees, shape indexes, &mldr;</span>
-          </li>
-          <li>
-          	  <h3>Cross-pod indexes can prune out irrelevant pods</h3>
-              <span class="indent">Aggregations or summarization of data across collections of pods</span><br \>
-              <span class="indent">Dangers: staleness, trust, censorship, &mldr;</span>
-          </li>
-      </ul>
     </section>
 	
     <section id="link-traversal-results" class="slide" inlist="" rel="schema:hasPart" resource="#link-traversal-results">
@@ -145,6 +127,25 @@
       </ul>
     </section>
 	
+    <section id="challenges" class="slide" inlist="" rel="schema:hasPart" resource="#challenges">
+      <h2 property="schema:name">If pods expose more information, complex querying can become faster</h2>
+     <ul>
+          <li>
+          	  <h3>When following links, engines can <em>discover</em> optimizations</h3>
+              <span class="indent">If pods expose them</span>
+          </li>
+          <!--<li>
+          	  <h3>A pod can guide engines more efficiently towards relevant data</h3>
+              <span class="indent">Type indexes, shape trees, shape indexes, &mldr;</span>
+          </li>
+          <li>
+          	  <h3>Cross-pod indexes can prune out irrelevant pods</h3>
+              <span class="indent">Aggregations or summarization of data across collections of pods</span><br \>
+              <span class="indent">Dangers: staleness, trust, censorship, &mldr;</span>
+          </li>-->
+      </ul>
+    </section>
+	
     <section id="shape-index" class="slide" inlist="" rel="schema:hasPart" resource="#shape-index">
       <h2 property="schema:name" style="font-size: 1.9em">Pods exposing <em>shape information</em> allows query engines to skip many links</h2>
       <center>
@@ -154,9 +155,20 @@
           <li style="font-size: 0.75em"><em><a href="https://arxiv.org/pdf/2407.00998v2">Tam, Bryan-Elliott, et al. "Opportunities for Shape-based Optimization of Link Traversal Queries." arXiv preprint arXiv:2407.00998 (2024).</a></em></li>
       </ul>
     </section>
+	
+    <section id="query-planning" class="slide" inlist="" rel="schema:hasPart" resource="#query-planning">
+      <h2 property="schema:name" style="font-size: 1.9em">Pods exposing <em>cardinality information</em> allows engines to make better query plans</h2>
+      <center>
+		  <img src="img/queryplans.png" alt="Query plan times" style="height: 300px" \>
+      </center>
+      <ul>
+          <li style="font-size: 0.75em"><em>Hanski, Jonni, et al. "Link Traversal over Decentralised Environments
+using Restart-Based Query Planning." ICWE 2025.</em></li>
+      </ul>
+    </section>
     
     <section id="conclusions" class="slide" inlist="" rel="schema:hasPart" resource="#conclusions">
-        <h2 property="schema:name">What we are working on</h2>
+        <h2 property="schema:name">We optimize client-driven execution</h2>
         <center><img src="img/comunica_white_on_red.svg" width="20%" style="float: right" /></center>
 		<ul>
 			<li>
